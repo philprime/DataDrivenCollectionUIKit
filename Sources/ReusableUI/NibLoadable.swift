@@ -44,6 +44,13 @@ extension NibLoadable where Self: UIView {
         return instance
     }
 }
+
+extension NibLoadable where Self: UIViewController {
+
+    public static func loadFromNib() -> Self {
+        return Self.init(nibName: nibName, bundle: nibBundle)
+    }
+}
 #endif
 
 public typealias NibReusable = NibLoadable & Reusable
